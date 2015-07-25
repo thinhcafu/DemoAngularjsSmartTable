@@ -1,0 +1,820 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BE938A67-AD02-4E4E-9924-6E64073F0232}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebAPI</RootNamespace>
+    <AssemblyName>WebAPI</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.0.0\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.0.0\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.0.0\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.0.0\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.1\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.0.0\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
+    <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
+    <Compile Include="Areas\HelpPage\Controllers\HelpController.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageAreaRegistration.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageConfigurationExtensions.cs" />
+    <Compile Include="Areas\HelpPage\Models\HelpPageApiModel.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleKey.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ImageSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\InvalidSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ObjectGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
+    <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AuthenticationHandler.cs" />
+    <Compile Include="Models\AuthenticationUser.cs" />
+    <Compile Include="Models\CredentialChecker.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\Repositories.cs" />
+    <Compile Include="Models\TotalProducts.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Style.css" />
+    <Content Include="Content\ui-grid.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="index.html" />
+    <Content Include="Scripts\angular.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\HelpPage\Views\Web.config" />
+    <Content Include="Areas\HelpPage\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Index.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\TextSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Samples.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Parameters.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\InvalidSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ImageSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\HelpPageApiModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\myScrt.js" />
+    <Content Include="Scripts\product.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\Smart-Table-master\.gitignore" />
+    <Content Include="Scripts\Smart-Table-master\dist\smart-table.js" />
+    <Content Include="Scripts\Smart-Table-master\dist\smart-table.min.js" />
+    <Content Include="Scripts\Smart-Table-master\gulpFile.js" />
+    <Content Include="Scripts\Smart-Table-master\index.js" />
+    <Content Include="Scripts\Smart-Table-master\src\bottom.txt" />
+    <Content Include="Scripts\Smart-Table-master\src\smart-table.module.js" />
+    <Content Include="Scripts\Smart-Table-master\src\stConfig.js" />
+    <Content Include="Scripts\Smart-Table-master\src\stPagination.js" />
+    <Content Include="Scripts\Smart-Table-master\src\stPipe.js" />
+    <Content Include="Scripts\Smart-Table-master\src\stSearch.js" />
+    <Content Include="Scripts\Smart-Table-master\src\stSelectRow.js" />
+    <Content Include="Scripts\Smart-Table-master\src\stSort.js" />
+    <Content Include="Scripts\Smart-Table-master\src\stTable.js" />
+    <Content Include="Scripts\Smart-Table-master\src\top.txt" />
+    <Content Include="Scripts\Smart-Table-master\test\init.js" />
+    <Content Include="Scripts\Smart-Table-master\test\karma.common.js" />
+    <Content Include="Scripts\Smart-Table-master\test\karma.conf.js" />
+    <Content Include="Scripts\Smart-Table-master\test\spec\stPagination.spec.js" />
+    <Content Include="Scripts\Smart-Table-master\test\spec\stPipe.spec.js" />
+    <Content Include="Scripts\Smart-Table-master\test\spec\stSearch.spec.js" />
+    <Content Include="Scripts\Smart-Table-master\test\spec\stSelectRow.spec.js" />
+    <Content Include="Scripts\Smart-Table-master\test\spec\stSort.spec.js" />
+    <Content Include="Scripts\Smart-Table-master\test\spec\stTable.spec.js" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\css\bootstrap-responsive.min.css" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\css\site.css" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\customizer.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\customizer\index.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\data\dataTemplates.txt" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\css\animations.css" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\css\bootstrap-flatly.css" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\css\bootstrap-flatly.min.css" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\css\bootstrap.min.css" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\css\docs.css" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\css\doc_widgets.css" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\css\font-awesome.css" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\css\prettify.css" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\css\ui-grid.css" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\favicon.ico" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\font\fontawesome-webfont.svg" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\grunt-scripts\csv.js" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\grunt-scripts\marked.js" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\grunt-scripts\pdfmake.js" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\grunt-scripts\prettify.js" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\grunt-scripts\ui-grid.js" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\grunt-scripts\vfs_fonts.js" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\index.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\js\angular-bootstrap-prettify.js" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\js\angular-bootstrap-prettify.min.js" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\js\angular-bootstrap.js" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\js\angular-bootstrap.min.js" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\js\angular.min.js" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\js\docs-setup.js" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\js\docs.js" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\js\google-code-prettify.js" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\js\marked.js" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\design-rendering-cycle.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\exporterMenuAllData.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\Grid.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\GridColumn.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\GridOptions.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\GridRow.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\index.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.autoResize.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.cellNav.api.ColDef.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.cellNav.api.ColumnDef.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.cellNav.api.GridOptions.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.cellNav.api.GridRow.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.cellNav.api.PublicApi.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.cellNav.constant.uiGridCellNavConstants.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.cellNav.constant.uiGridEditConstants.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.cellNav.directive.uiCellNav.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.cellNav.directive.uiGridCell.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.cellNav.Grid.cellNav.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.cellNav.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.cellNav.object.CellNav.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.cellNav.service.uiGridCellNavService.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.cellNav.service.uiGridNavService.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.class.Grid.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.class.GridApi.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.class.GridColumn.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.class.GridEvents.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.class.GridOptions.columnDef.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.class.GridOptions.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.class.GridRenderContainer.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.class.GridRow.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.class.RowSorter.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.class.ScrollEvent.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.core.api.PublicApi.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.core.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.directive.uiGrid.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.directive.uiGridColumnMenu.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.directive.uiGridMenu.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.directive.uiGridOneBind.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.directive.uiGridOneBindAlt.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.directive.uiGridOneBindAriaLabel.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.directive.uiGridOneBindAriaLabelledby.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.directive.uiGridOneBindAriaLabelledbyGrid.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.directive.uiGridOneBindClass.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.directive.uiGridOneBindHref.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.directive.uiGridOneBindHtml.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.directive.uiGridOneBindId.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.directive.uiGridOneBindIdGrid.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.directive.uiGridOneBindSrc.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.directive.uiGridOneBindStyle.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.directive.uiGridOneBindText.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.directive.uiGridOneBindTitle.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.directive.uiGridOneBindValue.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.directive.uiGridStyle.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.e2eTestLibrary.api.gridTest.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.e2eTestLibrary.api.gridTestObject.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.e2eTestLibrary.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.edit.api.ColDef.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.edit.api.ColumnDef.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.edit.api.GridOptions.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.edit.api.GridRow.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.edit.api.PublicApi.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.edit.constant.uiGridEditConstants.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.edit.directive.input.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.edit.directive.uiGridCell.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.edit.directive.uiGridEdit.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.edit.directive.uiGridEditDropdown.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.edit.directive.uiGridEditFileChooser.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.edit.directive.uiGridEditor.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.edit.directive.uiGridRenderContainer.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.edit.directive.uiGridTextEditor.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.edit.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.edit.service.uiGridEditService.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.edit.service.uiGridExpandableService.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.expandable.api.GridOptions.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.expandable.api.PublicApi.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.expandable.class.Grid.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.expandable.directive.uiGrid.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.expandable.directive.uiGridExpandableRow.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.expandable.directive.uiGridRow.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.expandable.directive.uiGridViewport.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.expandable.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.expandable.service.uiGridExpandableService.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.exporter.api.ColumnDef.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.exporter.api.GridOptions.columnDef.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.exporter.api.GridOptions.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.exporter.api.GridRow.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.exporter.api.PublicApi.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.exporter.constant.uiGridExporterConstants.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.exporter.directive.uiGridExporter.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.exporter.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.exporter.service.uiGridExporterService.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.gridMenuService.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.grouping.api.ColumnDef.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.grouping.api.GridOptions.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.grouping.api.PublicApi.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.grouping.constant.uiGridGroupingConstants.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.grouping.directive.uiGridGrouping.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.grouping.directive.uiGridGroupingExpandAllButtons.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.grouping.directive.uiGridGroupingRowHeaderButtons.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.grouping.directive.uiGridViewport.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.grouping.grid.grouping.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.grouping.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.grouping.service.uiGridGroupingService.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.i18n.constant.i18nConstants.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.i18n.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.i18n.service.i18nService.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.importer.api.GridOptions.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.importer.api.PublicApi.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.importer.constant.uiGridImporterConstants.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.importer.directive.uiGridImporter.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.importer.directive.uiGridImporterMenuItem.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.importer.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.importer.service.uiGridImporterService.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.infiniteScroll.api.GridOptions.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.infiniteScroll.api.PublicAPI.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.infiniteScroll.directive.uiGridInfiniteScroll.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.infiniteScroll.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.infiniteScroll.service.uiGridInfiniteScrollService.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.moveColumns.api.ColumnDef.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.moveColumns.api.GridOptions.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.moveColumns.api.PublicApi.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.moveColumns.directive.uiGridHeaderCell.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.moveColumns.directive.uiGridMoveColumns.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.moveColumns.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.moveColumns.service.uiGridMoveColumnService.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.pagination.api.GridOptions.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.pagination.api.PublicAPI.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.pagination.directive.uiGridPager.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.pagination.directive.uiGridPagination.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.pagination.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.pagination.service.uiGridPaginationService.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.paging.api.PublicAPI.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.paging.directive.uiGridPager.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.paging.directive.uiGridPaging.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.paging.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.paging.service.uiGridPagingService.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.pinning.api.ColDef.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.pinning.api.ColumnDef.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.pinning.api.GridOptions.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.pinning.api.PublicApi.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.pinning.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.resizeColumns.api.ColDef.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.resizeColumns.api.ColumnDef.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.resizeColumns.api.GridOptions.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.resizeColumns.api.PublicApi.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.resizeColumns.directive.uiGridColumnResizer.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.resizeColumns.directive.uiGridResizeColumns.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.resizeColumns.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.rowEdit.api.GridOptions.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.rowEdit.api.PublicApi.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.rowEdit.constant.uiGridRowEditConstants.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.rowEdit.directive.uiGridEdit.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.rowEdit.directive.uiGridViewport.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.rowEdit.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.rowEdit.service.uiGridRowEditService.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.saveState.api.GridOptions.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.saveState.api.PublicApi.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.saveState.constant.uiGridSaveStateConstants.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.saveState.directive.uiGridSaveState.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.saveState.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.saveState.service.uiGridSaveStateService.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.selection.api.GridOptions.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.selection.api.GridRow.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.selection.api.PublicApi.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.selection.constant.uiGridSelectionConstants.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.selection.directive.uiGridCell.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.selection.directive.uiGridSelection.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.selection.directive.uiGridViewport.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.selection.grid.selection.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.selection.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.selection.service.uiGridSelectionService.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.service.gridClassFactory.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.service.GridUtil.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.service.rowSearcher.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.service.uiGridColumnMenuService.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.style.directive.uiGridStyle.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.treeBase.api.ColumnDef.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.treeBase.api.GridOptions.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.treeBase.api.PublicApi.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.treeBase.constant.uiGridTreeBaseConstants.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.treeBase.directive.uiGridTreeBaseExpandAllButtons.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.treeBase.directive.uiGridTreeRowHeaderButtons.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.treeBase.directive.uiGridViewport.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.treeBase.grid.treeBase.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.treeBase.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.treeBase.service.uiGridTreeBaseService.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.treeView.api.GridOptions.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.treeView.api.PublicApi.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.treeView.constant.uiGridTreeViewConstants.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.treeView.directive.uiGridTreeView.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.treeView.directive.uiGridTreeViewExpandAllButtons.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.treeView.directive.uiGridTreeViewRowHeaderButtons.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.treeView.directive.uiGridViewport.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.treeView.grid.treeView.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.treeView.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.treeView.service.uiGridTreeViewService.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\api\ui.grid.util.service.GridUtil.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\001_start.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\098_contributing_to_ui-grid.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\099_upgrading_from_2.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\100_preReqs.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\101_intro.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\102_sorting.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\103_filtering.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\104_i18n.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\105_footer.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\106_binding.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\108_hidden_grids.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\109_multiple_grids.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\10_pinning.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\110_grid_in_modal.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\111_cellClass.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\112_swapping_data.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\113_adding_and_removing_columns.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\114_row_header.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\115_headerCellClass.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\116_fonts_and_installation.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\117_tooltips.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\120_RTL.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\121_grid_menu.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\12_i18n.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\190_large_dataset.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\190_swapping_data.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\191_horizontal_scrolling.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\1_basic_grid.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\2.1_appending_data.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\200_features.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\201_editable.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\202_cellnav.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\202_externalScopes.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\203_pinning.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\204_column_resizing.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\205_row_editable.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\206_exporting_data.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\207_importing_data.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\208_save_state.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\209_grouping.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\210_selection.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\211_two_grids.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\212_infinite_scroll.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\213_auto_resizing.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\214_pagination.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\215_paging.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\215_treeView.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\216_expandable_grid.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\217_column_moving.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\299_RTL.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\2_swapping_data.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\301_custom_row_template.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\301_editableOnFocus.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\302_custom_header.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\303_customizing_column_menu.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\304_custom_grid_menu.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\304_grid_menu.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\304_two_grids.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\305_appScope.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\305_externalScopes.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\306_custom_filters.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\306_expandable_grid.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\306_exporting_data_complex.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\307_external_sorting.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\308_external_filtering.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\309_editable_with_cellnav.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\310_column_moving.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\310_column_moving_grid.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\310_importing_data_with_rowedit.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\311_importing_data_with_rowedit.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\312_exporting_data_complex.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\313_custom_interpolation_symbols.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\314_external_pagination.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\314_external_paging.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\315_editable_cascading_dropdown.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\316_dynamic_data_changes.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\317_custom_templates.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\318_external_pagination.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\319_complex_trees.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\320_complex_grouping.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\321_singleFilter.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\3_large_dataset.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\4.1_custom_row_template.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\401_AllFeatures.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\402_GridIsScrolling.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\403_end_to_end_testing.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\404_large_data_sets_and_performance.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\405_exporting_all_data_complex.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\499_FAQ.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\4_custom_header.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\5.1.1_Filtering.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\5.1_sorting.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\5.2_customizing_column_menu.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\5.3_custom_grid_menu.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\5_100 data points.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\6a_editableOnFocus.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\6_editable.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\6_hidden_grids.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\7_multiple_grids.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\8_grid_in_modal.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\9.1_selection.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\91_column_row_customization.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\92_horizontal_scrolling.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\93_column_resizing.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\9_cellnav.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\basic_grid.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\custom_header.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\index.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\infinite_scroll.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\partials\tutorial\large_dataset.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\googlec19fc6b166e5b8af.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\images\bg_hr.png" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\images\blacktocat.png" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\images\icon_download.png" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\images\sprite_download.png" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\index.html" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\javascripts\main.js" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\js\bootstrap.min.js" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\js\customizer.js" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.10\ui-grid.css" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.10\ui-grid.js" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.10\ui-grid.min.css" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.10\ui-grid.min.js" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.10\ui-grid.svg" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.11\ui-grid.css" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.11\ui-grid.js" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.11\ui-grid.min.css" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.11\ui-grid.min.js" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.11\ui-grid.svg" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.12\ui-grid.css" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.12\ui-grid.js" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.12\ui-grid.min.css" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.12\ui-grid.min.js" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.12\ui-grid.svg" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.13\ui-grid.css" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.13\ui-grid.js" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.13\ui-grid.min.css" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.13\ui-grid.min.js" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.13\ui-grid.svg" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.14\ui-grid.css" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.14\ui-grid.js" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.14\ui-grid.min.css" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.14\ui-grid.min.js" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.14\ui-grid.svg" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.15\ui-grid.css" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.15\ui-grid.js" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.15\ui-grid.min.css" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.15\ui-grid.min.js" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.15\ui-grid.svg" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.16\ui-grid.css" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.16\ui-grid.js" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.16\ui-grid.min.css" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.16\ui-grid.min.js" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.16\ui-grid.svg" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-RC.18-7774d30\ui-grid.css" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-RC.18-7774d30\ui-grid.js" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-RC.18-7774d30\ui-grid.min.css" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-RC.18-7774d30\ui-grid.min.js" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-RC.18-7774d30\ui-grid.svg" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-RC.18-8fe4e49\ui-grid.css" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-RC.18-8fe4e49\ui-grid.js" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-RC.18-8fe4e49\ui-grid.min.css" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-RC.18-8fe4e49\ui-grid.min.js" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-RC.18-8fe4e49\ui-grid.svg" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-RC.18\ui-grid.css" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-RC.18\ui-grid.js" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-RC.18\ui-grid.min.css" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-RC.18\ui-grid.min.js" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-RC.18\ui-grid.svg" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.19\ui-grid.css" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.19\ui-grid.js" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.19\ui-grid.min.css" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.19\ui-grid.min.js" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.19\ui-grid.svg" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.20\ui-grid.css" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.20\ui-grid.js" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.20\ui-grid.min.css" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.20\ui-grid.min.js" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.20\ui-grid.svg" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.21\ui-grid.css" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.21\ui-grid.js" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.21\ui-grid.min.css" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.21\ui-grid.min.js" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.21\ui-grid.svg" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.22\ui-grid.css" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.22\ui-grid.js" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.22\ui-grid.min.css" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.22\ui-grid.min.js" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.22\ui-grid.svg" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.3\ui-grid.css" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.3\ui-grid.js" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.3\ui-grid.min.css" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.3\ui-grid.min.js" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.7\ui-grid.css" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.7\ui-grid.js" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.7\ui-grid.min.css" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.7\ui-grid.min.js" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.7\ui-grid.svg" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.8\ui-grid.css" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.8\ui-grid.js" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.8\ui-grid.min.css" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.8\ui-grid.min.js" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.8\ui-grid.svg" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.1\ui-grid.css" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.1\ui-grid.js" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.1\ui-grid.min.css" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.1\ui-grid.min.js" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.1\ui-grid.svg" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\ui-grid-stable.css" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\ui-grid-stable.js" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\ui-grid-stable.min.css" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\ui-grid-stable.min.js" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\ui-grid-unstable.css" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\ui-grid-unstable.js" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\ui-grid-unstable.min.css" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\ui-grid-unstable.min.js" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\ui-grid-unstable.svg" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\ui-grid.css" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\ui-grid.js" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\ui-grid.min.css" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\ui-grid.min.js" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\ui-grid.svg" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\stylesheets\pygment_trac.css" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\stylesheets\stylesheet.css" />
+    <Content Include="Scripts\ui-grid.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\CNAME" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\customizer\themes\autumn.json" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\customizer\themes\sky.json" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\customizer\themes\themes.json" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\data\100.json" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\data\10000.json" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\data\10000_complex.json" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\data\1000_columns.json" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\data\100_ASC.json" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\data\100_columns.json" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\data\100_DESC.json" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\data\100_female.json" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\data\100_male.json" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\data\500.json" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\data\500_complex.json" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\data\50_columns.json" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\font\fontawesome-webfont.eot" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\font\fontawesome-webfont.ttf" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\font\fontawesome-webfont.woff" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\docs\font\FontAwesome.otf" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\info.ini" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\less\ui-grid.less" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\params.json" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\README.md" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.10\ui-grid.eot" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.10\ui-grid.ttf" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.10\ui-grid.woff" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.11\ui-grid.eot" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.11\ui-grid.ttf" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.11\ui-grid.woff" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.12\ui-grid.eot" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.12\ui-grid.ttf" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.12\ui-grid.woff" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.13\ui-grid.eot" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.13\ui-grid.ttf" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.13\ui-grid.woff" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.14\ui-grid.eot" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.14\ui-grid.ttf" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.14\ui-grid.woff" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.15\ui-grid.eot" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.15\ui-grid.ttf" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.15\ui-grid.woff" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.16\ui-grid.eot" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.16\ui-grid.ttf" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.16\ui-grid.woff" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-RC.18-7774d30\ui-grid.eot" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-RC.18-7774d30\ui-grid.ttf" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-RC.18-7774d30\ui-grid.woff" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-RC.18-8fe4e49\ui-grid.eot" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-RC.18-8fe4e49\ui-grid.ttf" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-RC.18-8fe4e49\ui-grid.woff" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-RC.18\ui-grid.eot" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-RC.18\ui-grid.ttf" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-RC.18\ui-grid.woff" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.19\ui-grid.eot" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.19\ui-grid.ttf" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.19\ui-grid.woff" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.20\ui-grid.eot" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.20\ui-grid.ttf" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.20\ui-grid.woff" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.21\ui-grid.eot" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.21\ui-grid.ttf" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.21\ui-grid.woff" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.22\ui-grid.eot" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.22\ui-grid.ttf" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.22\ui-grid.woff" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.7\ui-grid.eot" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.7\ui-grid.ttf" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.7\ui-grid.woff" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.8\ui-grid.eot" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.8\ui-grid.ttf" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.0-rc.8\ui-grid.woff" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.1\ui-grid.eot" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.1\ui-grid.ttf" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\3.0.1\ui-grid.woff" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\src\less\animation.less" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\src\less\body.less" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\src\less\cell.less" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\src\less\elements.less" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\src\less\footer.less" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\src\less\goups.less" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\src\less\grid.less" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\src\less\header.less" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\src\less\icons.less" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\src\less\main.less" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\src\less\menu.less" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\src\less\rtl.less" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\src\less\sorting.less" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\src\less\variables.less" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\ui-grid-unstable.eot" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\ui-grid-unstable.ttf" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\ui-grid-unstable.woff" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\ui-grid.eot" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\ui-grid.ttf" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\release\ui-grid.woff" />
+    <Content Include="Scripts\ui-grid.info-gh-pages\update.json" />
+    <Content Include="Scripts\Smart-Table-master\.travis.yml" />
+    <Content Include="Scripts\Smart-Table-master\bower.json" />
+    <Content Include="Scripts\Smart-Table-master\changeLog.md" />
+    <Content Include="Scripts\Smart-Table-master\package.json" />
+    <Content Include="Scripts\Smart-Table-master\readme.md" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>18342</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:18342/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
